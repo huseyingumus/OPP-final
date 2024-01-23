@@ -1,0 +1,23 @@
+% 2 Objenin Simülasyonu
+
+w1 = [42 123 124 163 168 666];
+c1 = course("Family Fun","White",w1)
+
+w2 = [42 112:123 666];
+c2 = course("Insanity","Red",w2)
+
+Create two ID sticks
+id1 = idstick(123456);
+id2 = idstick(987654);
+
+Register a participant
+id1 = register(id1,"Astrid",c1);
+
+Simulate running the course
+id1 = checkWaypoint(id1,42);
+id1 = checkWaypoint(id1,123);
+id1 = checkWaypoint(id1,124);
+% Eğer waypoint kayıpsa işlem tamamlanamaz.
+id1 = checkWaypoint(id1,168);
+% işlem devam eder.
+id1 = checkWaypoint(id1,666)
